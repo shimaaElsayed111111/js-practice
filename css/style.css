@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: circle;
+}
+
+body{
+    font-family: "Ubunto", sans-serif;
+    background: #EEE;
+}
+
+.todo-list{
+    background: #EEE;
+    padding:30px 0; 
+}
+
+.todo-list .container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1{
+    margin-bottom: 30px;
+    color: rgb(99, 62, 116);
+}
+
+
+.tasks{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: rgb(99, 62, 116);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+}
+
+input{
+    border: 1px solid rgb(99, 62, 116);
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(99, 62, 116);
+}
+
+ul li{
+    font-size: 16px;
+    color: rgb(99, 62, 116);
+    margin-bottom: 5px;
+    margin-left: 20px;
+
+}
