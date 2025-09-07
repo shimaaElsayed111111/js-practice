@@ -1,25 +1,41 @@
 // add remove to-do list tasks
-var inputText =document.getElementById('txt');
+const inputText =document.getElementById('txt');
+const list = document.querySelector('ul');
+let listN = document.getElementById("list");
 
-    function addItem() {
-        var listN = document.getElementById("list");
-        var textN = document.createTextNode(inputText.value);
-        var liN = document.createElement("LI");
-
-        liN.appendChild(textN);
-        listN.appendChild(liN);
+function addTask() {
+    if(inputText.value === ''){
+        alert("you must write a task!");
+    }else{
+        let li = document.createElement("li");
+        li.innerHTML = inputText.value;
+        listN.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "X";
+        li.appendChild(span);
     }
-
-    function removeItem() {
-    var listN = document.getElementById("list");
-
-    if (listN.lastChild) {
-        listN.removeChild(listN.lastChild);
-    } else {
-        alert("list is empty");
-    }
+    inputText.value = "";
 }
 
+// remove item
+function removeItem() {
+    const  listN = document.getElementById("list");
+
+if (listN.lastChild) {
+    listN.removeChild(listN.lastChild);
+} else {
+    alert("list is empty");
+}
+}
+
+// Add a "checked" symbol when clicking on a list item or remove specific item when click on it
+list.addEventListener('click', function(e) {
+    if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+    }else if(e.target.tagName === 'SPAN'){
+        e.target.parentElement.remove();
+    }
+}, false);
 
 // counter app
 let count = 0;
