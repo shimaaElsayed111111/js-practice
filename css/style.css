@@ -81,10 +81,6 @@ ul li{
     align-items: center;
 }
 
-li span {
-    pointer-events: none;
-}
-
 li::before{
     content: '';
     width: 24px;

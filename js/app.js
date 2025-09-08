@@ -1,5 +1,5 @@
 // add remove to-do list tasks
-const inputText =document.getElementById('txt');
+const inputText = document.getElementById('txt');
 const list = document.querySelector('ul');
 let listN = document.getElementById("list");
 
@@ -11,11 +11,20 @@ function addTask() {
         li.innerHTML = inputText.value;
         listN.appendChild(li);
         let span = document.createElement("span");
-        span.innerHTML = "X";
+        span.textContent = "X";
         li.appendChild(span);
     }
     inputText.value = "";
 }
+
+// Add a "checked" symbol when clicking on a list item or remove specific item when click on it
+list.addEventListener('click', function(e) {
+    if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+    }else if(e.target.tagName === 'SPAN'){
+        e.target.parentElement.remove();
+    }
+}, false);
 
 // remove item
 function removeItem() {
@@ -27,15 +36,6 @@ if (listN.lastChild) {
     alert("list is empty");
 }
 }
-
-// Add a "checked" symbol when clicking on a list item or remove specific item when click on it
-list.addEventListener('click', function(e) {
-    if (e.target.tagName === 'LI') {
-        e.target.classList.toggle('checked');
-    }else if(e.target.tagName === 'SPAN'){
-        e.target.parentElement.remove();
-    }
-}, false);
 
 // counter app
 let count = 0;
