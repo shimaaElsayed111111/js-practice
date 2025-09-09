@@ -13,6 +13,9 @@ function addTask() {
         let span = document.createElement("span");
         span.textContent = "X";
         li.appendChild(span);
+
+        count++;
+        myTasksCounter();
     }
     inputText.value = "";
 }
@@ -23,6 +26,8 @@ list.addEventListener('click', function(e) {
         e.target.classList.toggle('checked');
     }else if(e.target.tagName === 'SPAN'){
         e.target.parentElement.remove();
+        count--;
+        myTasksCounter();
     }
 }, false);
 
@@ -32,6 +37,8 @@ function removeItem() {
 
 if (listN.lastChild) {
     listN.removeChild(listN.lastChild);
+    count--;
+    myTasksCounter();
 } else {
     alert("list is empty");
 }
@@ -52,21 +59,29 @@ let count = 0;
     
     incBtn.addEventListener('click', () => {
         count++;
+        if (count === 5){
+            document.body.style.backgroundColor = "rgb(166 176 174)";
+        }
         myTasksCounter();
-    });
+    }
+);
 
     decBtn.addEventListener('click', () => {
         if(count > 0)
         {
             count--;
+        }else{
+            document.body.style.backgroundColor = "#EEE";
         }
         myTasksCounter();
     });
 
     reset.addEventListener('click', () => {
         count = 0;
+        document.body.style.backgroundColor = "#EEE";
         myTasksCounter();
     });
 
     // intial display
     myTasksCounter();
+
