@@ -85,3 +85,18 @@ let count = 0;
     // intial display
     myTasksCounter();
 
+// accordion
+const accordions = document.querySelectorAll(".item-title");
+
+accordions.forEach(accordion =>{
+    accordion.addEventListener('click', e=>{
+        let acBtn =accordion.querySelector('button');
+        accordion.classList.toggle('active');
+
+        if(acBtn.textContent === '-'){
+            acBtn.textContent = '+'
+        }else{
+            acBtn.textContent = '-'
+        }
+    })
+})

@@ -132,3 +132,95 @@ li span {
     align-items: center;
 }
 
+/* accordition section */
+.accordition-section{
+    padding: 115px 0;
+    background: linear-gradient(180deg, #FEEBEB 0%, #C0EBF1 100%);
+}
+
+.accordition-section .accordition{
+    border-radius: 10px;
+    background: #FFF;
+    width: 500px;
+    margin: auto;
+}
+
+.accordition-section .item{
+    border-radius: 4px;
+    background: rgba(254, 235, 235, 0.00);
+    padding: 16px;
+}
+
+.accordition-section .item:hover{
+    background-color:rgba(192, 235, 241, 0.25);;
+}
+
+.accordition-section .item h3{
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    display: none;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+}
+
+.item p{
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.item a{
+    display: flex;
+    height: 27px;
+    width: 123px;
+    padding: 10px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 20px;
+    background: #6B63FF;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 400;
+    align-content: center;
+    justify-content: center;
+}
+
+.item-title {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.item-title.active {
+    color: #6B63FF;
+}
+
+
+.item-title.active + .content {
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.item button{
+    border-radius: 50px;
+    background: #FFF;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(239, 144, 65);
+    border: none;
+}
